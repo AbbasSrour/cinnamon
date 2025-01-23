@@ -1,0 +1,6 @@
+﻿services:
+  cinnamon:
+    image: cinnamon
+    build:
+      context: .
+      dockerfile: Cinnamon/Dockerfile
