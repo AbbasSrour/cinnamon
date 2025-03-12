@@ -9,8 +9,14 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Infrastructure;
 
 public static class InfrastructureModule {
-  public static IServiceCollection AddInfrastructure(this IServiceCollection services) {
+  public static IServiceCollection AddInfrastructure(
+    this IServiceCollection services,
+    ConfigurationManager configuration
+  ) {
     services.AddCommon();
+    services.AddPersistence(configuration);
+    services.AddCrypto(configuration);
+    
     return services;
   }
 
@@ -26,8 +32,9 @@ public static class InfrastructureModule {
     ConfigurationManager configuration
   ) {
     services.AddDbContext<RelationalDbContext>(options =>
-      options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
+      options.UseNpgsql(configuration.GetConnectionString("RelationalDbConnectionString"))
     );
+    
     services.AddDbContext<DocumentDbContext>(options =>
       options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
         .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
