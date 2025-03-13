@@ -7,7 +7,7 @@ namespace Application;
 public static class Module {
   public static IServiceCollection AddApplication(this IServiceCollection services) {
     services.ConfigureMapper();
-    
+
     return services;
   }
 

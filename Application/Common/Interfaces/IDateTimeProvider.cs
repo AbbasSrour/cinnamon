@@ -1,6 +1,6 @@
 namespace Application.Common.Interfaces;
 
 public interface IDateTimeProvider {
-    DateTime Now { get; }
-    DateTime UtcNow { get; }
+  DateTime Now { get; }
+  DateTime UtcNow { get; }
 }

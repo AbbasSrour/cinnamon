@@ -1,5 +1,5 @@
 namespace Domain.Common;
 
 public interface ISystemException {
-    public string Code { get; }
+  public string Code { get; }
 }

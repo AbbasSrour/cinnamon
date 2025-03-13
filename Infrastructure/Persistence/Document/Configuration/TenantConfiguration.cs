@@ -8,6 +8,5 @@ public class TenantConfiguration {
     ConfigureTable(builder);
   }
 
-  private void ConfigureTable(EntityTypeBuilder<Tenant> builder) {
-  }
+  private void ConfigureTable(EntityTypeBuilder<Tenant> builder) { }
 }

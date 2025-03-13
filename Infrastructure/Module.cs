@@ -16,7 +16,7 @@ public static class InfrastructureModule {
     services.AddCommon();
     services.AddPersistence(configuration);
     services.AddCrypto(configuration);
-    
+
     return services;
   }
 
@@ -34,7 +34,7 @@ public static class InfrastructureModule {
     services.AddDbContext<RelationalDbContext>(options =>
       options.UseNpgsql(configuration.GetConnectionString("RelationalDbConnectionString"))
     );
-    
+
     services.AddDbContext<DocumentDbContext>(options =>
       options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
         .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)

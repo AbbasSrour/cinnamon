@@ -4,8 +4,8 @@ using Domain.Tenant.ValueObject;
 namespace Domain.Tenant;
 
 public class Tenant : AggregateRoot<TenantId> {
-  protected Tenant() : base() {}
-  
+  protected Tenant() : base() { }
+
   private Tenant(TenantId id) : base(id) { }
 
   public string Name { get; private set; } = null!;

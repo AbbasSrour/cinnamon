@@ -2,5 +2,4 @@ using Cinnamon.Common;
 
 namespace Cinnamon.Auth;
 
-public class AuthController : AbstractController {
-}
+public class AuthController : AbstractController { }

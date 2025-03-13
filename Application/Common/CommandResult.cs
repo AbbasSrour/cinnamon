@@ -1,16 +1,16 @@
 namespace Application.Common;
 
 public class CommandResult {
-    // public IEnumerable<Error> Errors { get; set; }
+  // public IEnumerable<Error> Errors { get; set; }
 
-    public CommandResult(bool success) {
-        Success = success;
-    }
+  public CommandResult(bool success) {
+    Success = success;
+  }
 
-    public bool Success { get; set; }
+  public bool Success { get; set; }
 
-    // public CommandResult(IEnumerable<JSType.Error> errors) {
-    //     Success = false;
-    //     Errors = errors;
-    // }
+  // public CommandResult(IEnumerable<JSType.Error> errors) {
+  //     Success = false;
+  //     Errors = errors;
+  // }
 }

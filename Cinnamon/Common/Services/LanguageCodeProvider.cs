@@ -12,7 +12,7 @@ public class LanguageCodeProvider : ILanguageCodeProvider {
 
   public LanguageCode GetLanguageCode() {
     var code = _httpContextAccessor.HttpContext?.Request.Headers["X-Language-Code"];
-    
+
     return code.ToString() switch {
       "en-US" => LanguageCode.EnUs,
       "ar-LB" => LanguageCode.ArLb,

@@ -6,7 +6,7 @@ public class CompanyId : Common.ValueObject {
   }
 
   public Guid Value { get; }
-  
+
 
   public static CompanyId Create(Guid companyId = new()) {
     return new CompanyId(companyId);
