@@ -5,8 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Persistence.Relational.Configuration;
 
-public class TenantConfiguration {
-  public void Configure(EntityTypeBuilder<Tenant> builder) {
+public class TenantConfiguration : BaseEntityConfiguration<Tenant, TenantId> {
+  public override void Configure(EntityTypeBuilder<Tenant> builder) {
+    base.Configure(builder);
     ConfigureTable(builder);
   }
 
@@ -23,7 +24,7 @@ public class TenantConfiguration {
         tenantId => tenantId.Value,
         id => TenantId.Create(id)
       );
-    
+
     // Name
     builder.Property(tenant => tenant.Name)
       .HasColumnName("name")

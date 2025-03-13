@@ -5,8 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Persistence.Relational.Configuration;
 
-public class CompanyConfiguration {
-  public void Configure(EntityTypeBuilder<Company> builder) {
+public class CompanyConfiguration : BaseEntityConfiguration<Company, CompanyId> {
+  public override void Configure(EntityTypeBuilder<Company> builder) {
+    base.Configure(builder);
+    ConfigureTable(builder);
   }
 
   private void ConfigureTable(EntityTypeBuilder<Company> builder) {
