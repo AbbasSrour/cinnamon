@@ -11,6 +11,10 @@ public class UserId : Common.ValueObject {
         return new UserId(userId);
     }
 
+    public static UserId Create(string userId) {
+        return new UserId(Guid.Parse(userId));
+    }
+
     protected override IEnumerable<object> GetEqualityComponents() {
         yield return Value;
     }

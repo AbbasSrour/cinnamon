@@ -16,6 +16,7 @@ public sealed class RelationalDbContext(
   protected override void OnModelCreating(ModelBuilder modelBuilder) {
     new TenantConfiguration().Configure(modelBuilder.Entity<Tenant>());
     new CompanyConfiguration().Configure(modelBuilder.Entity<Company>());
+    new UserConfiguration().Configure(modelBuilder.Entity<User>());
 
     modelBuilder
       .Model
